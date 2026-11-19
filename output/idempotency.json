@@ -1,0 +1,22 @@
+{
+  "test": "2025-12 DWD 分区重跑",
+  "original": {
+    "rows": 4154358,
+    "revenue": 130667237.45,
+    "row_hash": "38309291469530128730675816",
+    "min_pickup": "2025-12-01 00:00:00",
+    "max_pickup": "2025-12-31 23:59:57",
+    "zones": 259
+  },
+  "rerun": {
+    "rows": 4154358,
+    "revenue": 130667237.45,
+    "row_hash": "38309291469530128730675816",
+    "min_pickup": "2025-12-01 00:00:00",
+    "max_pickup": "2025-12-31 23:59:57",
+    "zones": 259
+  },
+  "byte_identical": false,
+  "logical_identical": true,
+  "note": "Parquet 并行写导致文件字节/行顺序不完全一致，但行数、金额、行级 hash 完全一致；生产上以保证逻辑幂等为准。"
+}

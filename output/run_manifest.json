@@ -1,0 +1,56 @@
+{
+  "started_at": "2026-11-19T18:24:31",
+  "steps": [
+    {
+      "code": "01",
+      "name": "维度层",
+      "seconds": 0.69,
+      "returncode": 0
+    },
+    {
+      "code": "02",
+      "name": "ODS",
+      "seconds": 318.73,
+      "returncode": 0
+    },
+    {
+      "code": "03",
+      "name": "DWD",
+      "seconds": 357.37,
+      "returncode": 0
+    },
+    {
+      "code": "04",
+      "name": "DWS",
+      "seconds": 36.01,
+      "returncode": 0
+    },
+    {
+      "code": "05",
+      "name": "ADS",
+      "seconds": 8.66,
+      "returncode": 0
+    },
+    {
+      "code": "06",
+      "name": "数据质量",
+      "seconds": 3.4,
+      "returncode": 0
+    },
+    {
+      "code": "07",
+      "name": "性能实验",
+      "seconds": 46.68,
+      "returncode": 0
+    },
+    {
+      "code": "08",
+      "name": "看板",
+      "seconds": 3.04,
+      "returncode": 0
+    }
+  ],
+  "status": "OK",
+  "elapsed_seconds": 774.57,
+  "finished_at": "2026-11-19T18:37:26"
+}

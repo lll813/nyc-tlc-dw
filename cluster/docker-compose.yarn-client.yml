@@ -1,0 +1,37 @@
+# TLC 数仓接入现有 Hadoop/YARN 集群
+# - 不新建 master/worker：复用已运行的 ResourceManager + NodeManager
+# - 只起一个 Spark 3.5 客户端容器（driver 在容器内，executor 跑在 YARN）
+# - HDFS 用现有 namenode:9000，数据目录 /tlc
+#
+# 启动：docker compose -f cluster/docker-compose.yarn-client.yml up -d
+# 进入：docker exec -it tlc-spark-client bash
+# 运行：/opt/spark/bin/spark-sql --master yarn --deploy-mode client -f /opt/conf/pilot.sql
+
+services:
+  spark-client:
+    image: docker.1ms.run/bde2020/hadoop-namenode:2.0.0-hadoop3.2.1-java8
+    container_name: tlc-spark-client
+    hostname: spark-client
+    entrypoint: ["/bin/bash", "-lc", "sleep infinity"]
+    environment:
+      JAVA_HOME: /usr/lib/jvm/java-8-openjdk-amd64
+      SPARK_HOME: /opt/spark
+      SPARK_CONF_DIR: /opt/conf
+      HADOOP_CONF_DIR: /opt/conf
+      YARN_CONF_DIR: /opt/conf
+      SPARK_LOG_DIR: /tmp/spark-logs
+      SPARK_LOCAL_DIRS: /tmp/spark-local
+    volumes:
+      - ../tools/spark-3.5.9-bin-hadoop3:/opt/spark:ro
+      - ./conf:/opt/conf:ro
+      - ./sql:/opt/tlc-sql:ro
+      - ../data:/data:ro
+    networks:
+      - bigdata
+    mem_limit: 900m
+    memswap_limit: 900m
+
+networks:
+  bigdata:
+    external: true
+    name: bigdata-warehouse_default

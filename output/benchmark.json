@@ -1,0 +1,167 @@
+{
+  "machine": "i7-12700H / 16GB / Windows / DuckDB 2.0 / 3GB memory_limit / 4 threads",
+  "results": [
+    {
+      "name": "raw_full_scan_sum",
+      "seconds_median": 0.221,
+      "seconds_best": 0.219,
+      "rows": 1,
+      "note": "36 个月原始 Parquet 全量，真实读金额列"
+    },
+    {
+      "name": "raw_one_month_sum",
+      "seconds_median": 0.01,
+      "seconds_best": 0.01,
+      "rows": 1,
+      "note": "单月 Parquet，模拟分区裁剪"
+    },
+    {
+      "name": "dwd_full_scan_sum",
+      "seconds_median": 0.252,
+      "seconds_best": 0.251,
+      "rows": 1,
+      "note": "DWD 全量金额列"
+    },
+    {
+      "name": "dwd_one_month_sum",
+      "seconds_median": 0.061,
+      "seconds_best": 0.061,
+      "rows": 1,
+      "note": "分区裁剪到 1 个月"
+    },
+    {
+      "name": "dwd_groupby_zone",
+      "seconds_median": 0.504,
+      "seconds_best": 0.474,
+      "rows": 263,
+      "note": "按 zone 聚合全量"
+    },
+    {
+      "name": "dwd_groupby_date",
+      "seconds_median": 0.864,
+      "seconds_best": 0.855,
+      "rows": 1096,
+      "note": "按天聚合全量"
+    },
+    {
+      "name": "column_1",
+      "seconds_median": 0.476,
+      "seconds_best": 0.466,
+      "rows": 1,
+      "note": "只读 1 列"
+    },
+    {
+      "name": "column_6",
+      "seconds_median": 1.824,
+      "seconds_best": 1.765,
+      "rows": 1,
+      "note": "读 6 列"
+    },
+    {
+      "name": "threads_1_groupby_zone",
+      "seconds_median": 3.431,
+      "seconds_best": 3.379,
+      "rows": 263,
+      "note": "threads=1"
+    },
+    {
+      "name": "threads_2_groupby_zone",
+      "seconds_median": 1.784,
+      "seconds_best": 1.774,
+      "rows": 263,
+      "note": "threads=2"
+    },
+    {
+      "name": "threads_4_groupby_zone",
+      "seconds_median": 0.965,
+      "seconds_best": 0.947,
+      "rows": 263,
+      "note": "threads=4"
+    },
+    {
+      "name": "threads_8_groupby_zone",
+      "seconds_median": 0.659,
+      "seconds_best": 0.618,
+      "rows": 263,
+      "note": "threads=8"
+    },
+    {
+      "name": "csv_one_month_agg",
+      "seconds_median": 2.154,
+      "seconds_best": 2.061,
+      "rows": 1,
+      "note": "CSV 1.21 GB"
+    },
+    {
+      "name": "parquet_one_month_agg",
+      "seconds_median": 0.104,
+      "seconds_best": 0.1,
+      "rows": 1,
+      "note": "Parquet 0.12 GB"
+    },
+    {
+      "name": "skew_top_zones",
+      "top": [
+        [
+          237,
+          5661997
+        ],
+        [
+          132,
+          5616827
+        ],
+        [
+          161,
+          5576816
+        ],
+        [
+          236,
+          5042649
+        ],
+        [
+          162,
+          4147485
+        ],
+        [
+          186,
+          4070968
+        ],
+        [
+          230,
+          3991053
+        ],
+        [
+          142,
+          3826477
+        ],
+        [
+          138,
+          3759855
+        ],
+        [
+          170,
+          3466676
+        ]
+      ],
+      "total": 122349675,
+      "top1_share": 0.0463
+    },
+    {
+      "name": "skew_naive_groupby",
+      "seconds_median": 0.97,
+      "seconds_best": 0.965,
+      "rows": 87791,
+      "note": "普通两列 group by"
+    },
+    {
+      "name": "skew_salted_groupby",
+      "seconds_median": 2.441,
+      "seconds_best": 2.412,
+      "rows": 87791,
+      "note": "加盐两阶段聚合"
+    }
+  ],
+  "csv_gb": 1.2096830308437347,
+  "parquet_gb": 0.11625523027032614,
+  "db_size_gb": 0.03
+}

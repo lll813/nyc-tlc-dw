@@ -1,0 +1,75 @@
+{
+  "spark_version": "4.3.0",
+  "java_version": "21.0.2",
+  "mode": "local[2] / driver 2g",
+  "sample": "2023-01 ODS",
+  "dwd_rows": 3009745,
+  "build_seconds": 30.6,
+  "direct_seconds": 1.638,
+  "salted_seconds": 0.845,
+  "speedup_pct": 48.4,
+  "direct_rows": 4966,
+  "salted_rows": 4966,
+  "top_zones": [
+    {
+      "pu_location_id": 132,
+      "pu_zone": "JFK Airport",
+      "trips": 153546,
+      "revenue": 11866691.6
+    },
+    {
+      "pu_location_id": 138,
+      "pu_zone": "LaGuardia Airport",
+      "trips": 87830,
+      "revenue": 5621476.15
+    },
+    {
+      "pu_location_id": 161,
+      "pu_zone": "Midtown Center",
+      "trips": 133644,
+      "revenue": 3147605.65
+    },
+    {
+      "pu_location_id": 237,
+      "pu_zone": "Upper East Side South",
+      "trips": 146384,
+      "revenue": 2887478.15
+    },
+    {
+      "pu_location_id": 236,
+      "pu_zone": "Upper East Side North",
+      "trips": 136911,
+      "revenue": 2826164.23
+    },
+    {
+      "pu_location_id": 230,
+      "pu_zone": "Times Sq/Theatre District",
+      "trips": 97180,
+      "revenue": 2545897.75
+    },
+    {
+      "pu_location_id": 186,
+      "pu_zone": "Penn Station/Madison Sq West",
+      "trips": 107868,
+      "revenue": 2513920.9
+    },
+    {
+      "pu_location_id": 162,
+      "pu_zone": "Midtown East",
+      "trips": 104005,
+      "revenue": 2396523.01
+    },
+    {
+      "pu_location_id": 142,
+      "pu_zone": "Lincoln Square East",
+      "trips": 99080,
+      "revenue": 2115201.33
+    },
+    {
+      "pu_location_id": 170,
+      "pu_zone": "Murray Hill",
+      "trips": 87143,
+      "revenue": 1993343.7
+    }
+  ]
+}

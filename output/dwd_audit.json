@@ -1,0 +1,45 @@
+{
+  "funnel": {
+    "ods_rows": 128202401,
+    "bad_time_order": 575383,
+    "bad_duration": 1531810,
+    "bad_distance": 4369,
+    "bad_amount": 3971064,
+    "bad_tip_toll": 151468,
+    "bad_zone": 0,
+    "bad_payment": 0,
+    "bad_ratecode": 0,
+    "bad_passenger": 125,
+    "filtered_rows": 122349680
+  },
+  "dwd_rows": 122349675,
+  "dedup_removed": 5,
+  "dedup_rate": 0.0,
+  "partitions": 36,
+  "by_year": [
+    [
+      2023,
+      37514486,
+      12,
+      1082.99
+    ],
+    [
+      2024,
+      39987056,
+      12,
+      1142.51
+    ],
+    [
+      2025,
+      44848133,
+      12,
+      1289.76
+    ]
+  ],
+  "null_dims": {
+    "null_pu_zone": 0,
+    "null_payment": 0,
+    "null_weather": 0
+  },
+  "size_gb": 4.32
+}

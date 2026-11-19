@@ -1,0 +1,21 @@
+# 大数据/工具目录不入库；克隆后跑 python run_all.py 自动下载
+data/raw/
+data/ods/
+data/dwd/
+data/dws/
+data/ads/
+data/dim/
+data/bench/
+db/
+tools/
+lib/
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+.tmp/
+
+# 系统
+Thumbs.db
+.DS_Store

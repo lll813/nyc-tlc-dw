@@ -1,0 +1,192 @@
+{
+  "generated_at": "2026-11-19T18:36:36",
+  "overall": "WARN",
+  "summary": {
+    "total": 18,
+    "pass": 17,
+    "warn": 1,
+    "fail": 0
+  },
+  "checks": [
+    {
+      "check": "ods_reject_rate",
+      "layer": "ODS",
+      "rule": "异常 pickup 时间戳占比",
+      "observed": 1e-06,
+      "threshold": 0.02,
+      "status": "PASS",
+      "severity": "FAIL",
+      "detail": "raw=128,202,548, ods=128,202,401, rejected=147"
+    },
+    {
+      "check": "ods_partitions",
+      "layer": "ODS",
+      "rule": "按月分区数 = 36",
+      "observed": 36,
+      "threshold": 36,
+      "status": "PASS",
+      "severity": "FAIL",
+      "detail": ""
+    },
+    {
+      "check": "ods_rows_positive",
+      "layer": "ODS",
+      "rule": "ODS 行数 > 1 亿",
+      "observed": "128,202,401",
+      "threshold": 100000000,
+      "status": "PASS",
+      "severity": "FAIL",
+      "detail": ""
+    },
+    {
+      "check": "dwd_rows_positive",
+      "layer": "DWD",
+      "rule": "DWD 行数 > 1 亿",
+      "observed": "122,349,675",
+      "threshold": 100000000,
+      "status": "PASS",
+      "severity": "FAIL",
+      "detail": ""
+    },
+    {
+      "check": "dim_weather_days",
+      "layer": "DIM",
+      "rule": "天气维表覆盖 1096 天",
+      "observed": 1096,
+      "threshold": 1096,
+      "status": "PASS",
+      "severity": "FAIL",
+      "detail": ""
+    },
+    {
+      "check": "dwd_bad_duration",
+      "layer": "DWD",
+      "rule": "时长/时间顺序合法",
+      "observed": 0,
+      "threshold": 0,
+      "status": "PASS",
+      "severity": "FAIL",
+      "detail": "rows=122,349,675"
+    },
+    {
+      "check": "dwd_bad_distance",
+      "layer": "DWD",
+      "rule": "里程在 0~200 英里",
+      "observed": 0,
+      "threshold": 0,
+      "status": "PASS",
+      "severity": "FAIL",
+      "detail": "rows=122,349,675"
+    },
+    {
+      "check": "dwd_bad_amount",
+      "layer": "DWD",
+      "rule": "金额非负",
+      "observed": 0,
+      "threshold": 0,
+      "status": "PASS",
+      "severity": "FAIL",
+      "detail": "rows=122,349,675"
+    },
+    {
+      "check": "dwd_bad_zone",
+      "layer": "DWD",
+      "rule": "zone id 在 1~265",
+      "observed": 0,
+      "threshold": 0,
+      "status": "PASS",
+      "severity": "FAIL",
+      "detail": "rows=122,349,675"
+    },
+    {
+      "check": "dwd_null_pu_zone",
+      "layer": "DWD",
+      "rule": "上车 zone 维度覆盖率",
+      "observed": 1.0,
+      "threshold": 0.995,
+      "status": "PASS",
+      "severity": "FAIL",
+      "detail": "null=0"
+    },
+    {
+      "check": "dwd_null_payment",
+      "layer": "DWD",
+      "rule": "支付方式维度覆盖率",
+      "observed": 1.0,
+      "threshold": 0.999,
+      "status": "PASS",
+      "severity": "FAIL",
+      "detail": "null=0"
+    },
+    {
+      "check": "dwd_null_weather",
+      "layer": "DWD",
+      "rule": "天气维度覆盖率",
+      "observed": 1.0,
+      "threshold": 0.99,
+      "status": "PASS",
+      "severity": "FAIL",
+      "detail": "null=0"
+    },
+    {
+      "check": "dwd_revenue_reconcile",
+      "layer": "DWD",
+      "rule": "分项之和 ≈ total_amount（±$0.01）",
+      "observed": 0.70164,
+      "threshold": 0.999,
+      "status": "WARN",
+      "severity": "WARN",
+      "detail": "TLC 不同 Vendor 的分项口径不一致，收入以 total_amount 为准；此规则只观测不阻断"
+    },
+    {
+      "check": "dwd_dedup_rate",
+      "layer": "DWD",
+      "rule": "自然键重复率（月分区内去重前）",
+      "observed": 0.0,
+      "threshold": 0.005,
+      "status": "PASS",
+      "severity": "FAIL",
+      "detail": "removed=5"
+    },
+    {
+      "check": "ads_daily_days",
+      "layer": "ADS",
+      "rule": "日粒度覆盖 1096 天",
+      "observed": 1096,
+      "threshold": 1096,
+      "status": "PASS",
+      "severity": "FAIL",
+      "detail": ""
+    },
+    {
+      "check": "ads_month_count",
+      "layer": "ADS",
+      "rule": "月粒度覆盖 36 个月",
+      "observed": 36,
+      "threshold": 36,
+      "status": "PASS",
+      "severity": "FAIL",
+      "detail": ""
+    },
+    {
+      "check": "ads_trip_reconcile",
+      "layer": "ADS",
+      "rule": "ADS 行程数 = DWD 行数",
+      "observed": "122,349,675 vs 122,349,675",
+      "threshold": "equal",
+      "status": "PASS",
+      "severity": "FAIL",
+      "detail": ""
+    },
+    {
+      "check": "ads_revenue_reconcile",
+      "layer": "ADS",
+      "rule": "ADS 收入 = DWD 收入（误差 < 0.1%）",
+      "observed": 0.0,
+      "threshold": 0.001,
+      "status": "PASS",
+      "severity": "FAIL",
+      "detail": "ads=3,515,258,863.71, dwd=3,515,258,863.74"
+    }
+  ]
+}
